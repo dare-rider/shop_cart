@@ -50,3 +50,4 @@ build-iPhoneSimulator/
 .rvmrc
 
 /json/coupon_codes.json
+.rake_tasks~
