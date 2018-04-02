@@ -1,0 +1,14 @@
+{
+  "cart_items": [
+    {
+      "product_id": 1,
+      "quantity": 2,
+      "unit_cost": 100
+    },
+    {
+      "product_id": 2,
+      "quantity": 2,
+      "unit_cost": 250
+    }
+  ]
+}
