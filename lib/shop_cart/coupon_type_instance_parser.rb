@@ -35,11 +35,10 @@ class CouponTypeInstanceParser
     end
 
     def load_coupon_codes_through_rake
-      puts Constants::COUPON_CODE_DOWNLOAD_MSG
       rake = Rake.application
       rake.init
       rake.load_rakefile
-      rake['json:coupon_codes'].invoke()
+      rake[Constants::COUPON_CODE_DOWNLOAD_TASK].invoke()
     end
 
 end

@@ -8,6 +8,7 @@ namespace :json do
 
   desc "Download coupon codes file"
   task :coupon_codes do
+    puts Constants::COUPON_CODE_DOWNLOAD_MSG
     response = conn.get Constants::COUPON_CODES_REMOTE_PATH
     store_file(response, Constants::COUPON_CODES_STORE_PATH);
   end

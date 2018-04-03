@@ -5,6 +5,7 @@ class Constants
   COUPON_CODES_STORE_PATH  = "json/coupon_codes.json"
   CART_ITEMS_STORE_PATH    = "json/cart_items.json"
   COUPON_APPLIED_STRING    = "Coupon applied"
+  COUPON_CODE_DOWNLOAD_TASK= "json:coupon_codes"
   COUPON_CODE_DOWNLOAD_MSG = "Downloading coupon codes through rake json:coupon_codes ....."
 
 end
