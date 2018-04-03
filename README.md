@@ -12,6 +12,12 @@ ruby 2.3
 </ul>
 <br/>
 <br/>
+<b>Assumptions:</b>
+<ul>
+  <li>Maximum discount is applied if the discount value is greater than max_discount.</li>
+  <li>Cashback value not considered while validating minimum_delivery_amount_after_discount and maximum_discount.</li>
+  <li>If BOGO discount becomess greater than the max_discount, then max_discount is applied.</li>
+</ul>
 <b>Application Structure</b>
 <ul>
   <li>
