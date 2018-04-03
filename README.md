@@ -6,10 +6,10 @@ ruby 2.3
 <b>Run Application</b>
 <ul>
   <li><code>bundle install</code> (Gems used: faraday, rake, rspec)</li>
-  <li>Run <b><code>ruby lib/shop_cart.rb &lt coupon_code &gt &lt outlet_it &gt></code></b></li>
+  <li>Run <b><code>ruby lib/shop_cart.rb &lt coupon_code &gt &lt outlet_it &gt</code></b></li>
   <small> **Go to the root of project folder and run this command, it will auto download the coupon_codes.json file using a rake task [json:coupon_codes], this task can be run again from the app root folder to re-download the file</small>
   <small> **json/cart_items.json is the application input file, modify accordingly</small>
-  <li>Run <b><code>rspec . </code></b> to run test cases</li>
+  <li>Run <b><code>rspec . </code></b> from the App root folder to run test cases</li>
 </ul>
 <br/>
 <br/>
