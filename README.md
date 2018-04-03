@@ -44,6 +44,9 @@ ruby 2.3
     </ul>
   </li>
   <li>
+    <b>specs</b> - Contains all unit test cases
+  </li>
+  <li>
     <b>lib</b> - Contains all the application init and core source files
     <ul>
       <li><i>shop_cart.rb</i> - Application init file which loads all the core source files and initiates the application process.</li>
