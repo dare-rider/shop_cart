@@ -5,14 +5,16 @@
 class Discount
 
   def initialize(cart_items, coupon_code, outlet_id)
-    @cart = Cart::FullCart.new(cart_items)
+    @cart_items = cart_items
+    @coupon_code = coupon_code
     @outlet_id = outlet_id
-    @coupon_type = CouponTypeInstanceParser.new(coupon_code).instance
   end
 
   def apply
     begin
-      discount, cashback = @coupon_type.apply_discount(@cart, @outlet_id)
+      cart = Cart::FullCart.new(@cart_items, @outlet_id)
+      coupon_type = CouponTypeInstanceParser.new(@coupon_code).instance
+      discount, cashback = coupon_type.apply_discount(cart)
       return success_result(discount, cashback)
     rescue Exception => e
       return error_result(e.message)

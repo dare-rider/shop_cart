@@ -1,10 +1,10 @@
-# require_relative 'concerns/initializer'
+# require_relative 'concerns/base'
 # require_relative './../../../config/errors'
 
 module CouponTypes
   class Bogo
 
-    include CouponTypes::Initializer
+    include CouponTypes::Base
 
     def calculate_discount(cart)
       @items_with_quantity_gt_1 = cart.items_with_quantity_gt_1
@@ -13,6 +13,10 @@ module CouponTypes
       else
         return [bogo_single_qunatity_discount(cart), maximum_discount].min
       end
+    end
+
+    def calculate_cashback(cart)
+      0
     end
 
     private

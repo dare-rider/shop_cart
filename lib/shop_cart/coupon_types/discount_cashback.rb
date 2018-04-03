@@ -1,9 +1,7 @@
-# require_relative 'concerns/initializer'
+# require_relative 'concerns/base'
 
 module CouponTypes
   class DiscountCashback
-
-    include CouponTypes::Initializer
-
+    include CouponTypes::Base
   end
 end

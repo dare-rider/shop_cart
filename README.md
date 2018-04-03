@@ -5,16 +5,16 @@ ruby 2.3
 <br/>
 <b>Run Application</b>
 <ul>
-  <li>bundle install (Gems used: faraday, rake)</li>
-  <li>Run <b>ruby lib/shop_cart.rb</b></li>
+  <li><code>bundle install</code> (Gems used: faraday, rake, rspec)</li>
+  <li>Run <b><code>ruby lib/shop_cart.rb &lt coupon_code &gt &lt outlet_it &gt></code></b></li>
   <small> **Go to the root of project folder and run this command, it will auto download the coupon_codes.json file using a rake task [json:coupon_codes], this task can be run again from the app root folder to re-download the file</small>
   <small> **json/cart_items.json is the application input file, modify accordingly</small>
+  <li>Run <b><code>rspec . </code></b> to run test cases</li>
 </ul>
 <br/>
 <br/>
 <b>Assumptions:</b>
 <ul>
-  <li>Input json (json/cart_items.json) is considered valid.</li>
   <li>Maximum discount is applied if the discount value is greater than max_discount.</li>
   <li>Cashback value not considered while validating minimum_delivery_amount_after_discount and maximum_discount.</li>
   <li>If BOGO discount becomess greater than the max_discount, then max_discount is applied.</li>
@@ -50,7 +50,7 @@ ruby 2.3
       <li>
         <b>shop_cart</b> - Contains all the core source files
         <ul>
-          <li><i>discount.rb</i> - Responsible for creating the Cart and CouponType instances and returning the final result. Complete relation among files is explained in the following figure.</li>
+          <li><i>discount.rb</i> - Responsible for applying discount by creating the Cart and CouponType instances and returning the final result. Complete relation among files is explained in the following figure.</li>
         </ul>
       </li>
     </ul>

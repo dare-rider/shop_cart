@@ -1,9 +1,13 @@
 # require 'date'
 # require_relative "./../../../../config/errors"
+# require_relative "./../../../../config/constants"
+# require_relative "coupon_hash_validator"
 
 module CouponTypes
 
   module Validator
+
+    include CouponTypes::CouponHashValidator
 
     def validate_coupon(outlet_id)
       currently_active? && applicable_for_today? && applicable_on_outlet?(outlet_id)

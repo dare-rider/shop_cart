@@ -3,7 +3,7 @@
 
 module CouponTypes
 
-  module Initializer
+  module Base
 
     # must override calculate_discount(cart_items) or calculate_cashback(cart_items) in respective class
 
@@ -11,11 +11,12 @@ module CouponTypes
 
     def initialize(coupon_hash)
       @coupon_hash = coupon_hash
+      validate_coupon_hash
       serialize
     end
 
-    def apply_discount(cart, outlet_id)
-      validate_coupon(outlet_id)
+    def apply_discount(cart)
+      validate_coupon(cart.outlet_id)
       discount = calculate_discount(cart)
       cashback = calculate_cashback(cart)
       delivery_amount = cart.total - discount

@@ -12,20 +12,12 @@ class CouponTypeInstanceParser
     @coupon_code = coupon_code
   end
 
+  # Return specific coupon type instance
   def instance
-    @coupon_hash = all_coupons.find{|coupon| coupon["code"] == @coupon_code}
+    @coupon_hash = get_coupon_hash
     raise Errors::COUPON_CODE_INVALID unless @coupon_hash
     klass = Object.const_get("CouponTypes::#{coupon_type}")
     klass.new(@coupon_hash)
-  end
-
-  def all_coupons
-    begin
-      @all_coupons ||= JSON.parse(File.read(Constants::COUPON_CODES_STORE_PATH))["coupon_codes"]
-    rescue
-      load_coupon_codes_through_rake
-      all_coupons
-    end
   end
 
   private
@@ -39,6 +31,19 @@ class CouponTypeInstanceParser
       rake.init
       rake.load_rakefile
       rake[Constants::COUPON_CODE_DOWNLOAD_TASK].invoke()
+    end
+
+    def all_coupons
+      begin
+        @all_coupons ||= JSON.parse(File.read(Constants::COUPON_CODES_STORE_PATH))["coupon_codes"]
+      rescue
+        load_coupon_codes_through_rake
+        all_coupons
+      end
+    end
+
+    def get_coupon_hash
+      all_coupons.find{|coupon| coupon["code"] == @coupon_code}
     end
 
 end
