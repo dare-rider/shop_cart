@@ -18,6 +18,8 @@ ruby 2.3
   <li>Cashback value not considered while validating minimum_delivery_amount_after_discount and maximum_discount.</li>
   <li>If BOGO discount becomess greater than the max_discount, then max_discount is applied.</li>
 </ul>
+<br/>
+<br/>
 <b>Application Structure</b>
 <ul>
   <li>
