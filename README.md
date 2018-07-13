@@ -1,3 +1,7 @@
+# Problem Statement
+
+https://gist.github.com/mntdamania/9a3bf1760f239fb28b867b98494b84d9
+
 # Shop Cart
 <b>Requirements</b><br/>
 ruby 2.3
